@@ -18,7 +18,9 @@
 
 # 改进方向
 1. 尝试直接用GM_download下载，但总是失败，于是改成模拟点击+收集信息修改文件名的方式，如果找到解决方式或许不需要另一脚本进行修改文件名了
-2. 'const pdfLinkElement = doc.querySelector('a[href*="/pdf/"], a[href*=".pdf"]');'中元素选择器可以改进，目前部分文献链接在google scholar中但无法被识别，但我这次已经完工了，懒得改了，下次如果还有这种需求可以想想该咋加
+2. `const pdfLinkElement = doc.querySelector('a[href*="/pdf/"], a[href*=".pdf"]');` 中元素选择器可以改进，目前部分文献链接在google scholar中但无法被识别，但我这次已经完工了，懒得改了，下次如果还有这种需求可以想想该咋加
+
+
 
 
 
