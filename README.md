@@ -1,7 +1,8 @@
 # 简单介绍
-这段代码是一个 Tampermonkey 用户脚本，用于自动化下载与特定关键词相关的学术论文
-找到某会议的paperList，自动获取与关键词相关的所有paper title并自动从google scholar查找下载pdf，成功率约85%
-代码运行结束后会在页面最下方生成一个json文件，配合change_name.py可以批量修改论文文件名
+- 这段代码是一个 Tampermonkey 用户脚本，用于自动化下载与特定关键词相关的学术论文
+- 找到某会议的paperList，自动获取与关键词相关的所有paper title并自动从google scholar查找下载pdf，成功率约85%
+- 代码运行结束后会在页面最下方生成一个json文件，配合change_name.py可以批量修改论文文件名
+- 没成功也会在控制台输出unfound PDF列表或json里文件url为null，自己手动处理一下
 
 # 使用方法
 1. 修改@match为你的paperList网页链接
