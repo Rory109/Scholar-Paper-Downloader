@@ -6,7 +6,7 @@
 // @description  开启前确保浏览器设置点击PDF自动下载，设置下载位置以修改正确，运行结束后可在最下方下载json文件配合change_name.py修改文件名
 // @author       rory
 // @match        https://scholar.google.com/scholar/*
-// @match        https://icml.cc/Conferences/*
+// @match        https://openaccess.thecvf.com/*
 // @grant        GM_xmlhttpRequest
 // @grant        GM_download
 // ==/UserScript==
@@ -15,11 +15,12 @@
     'use strict';
 
     // 关键词
-    var keyword = 'active';
+    var keyword = 'incremental';
     var unfoundPDF = [];
     var downloadRecords = []; // 记录下载的 PDF 链接和文件名
-    const links = document.querySelectorAll('.maincardBody'); // 获取所有文献标题
-    const btnparent = document.querySelector('#main > div.container > div > div.col-sm-9'); //开启按钮放置位置的父节点设置
+    const links = document.querySelectorAll('#content > dl > dt > a'); // 获取所有文献标题
+    //const btnparent = document.querySelector('#content > h3'); //开启按钮放置位置的父节点设置
+
 
     const sleep = (time) => {
         return new Promise((resolve) => setTimeout(resolve, time));
@@ -27,7 +28,7 @@
 
     // 提取文献标题的函数
     const extractPaperTitles = () => {
-        
+
         let matchingTitles = [];
         for (let i = 0; i < links.length; i++) {
             let title = links[i].innerText.trim().toLowerCase();
@@ -127,9 +128,11 @@
     // 创建按钮，触发下载任务
     let btn = document.createElement("button");
     btn.innerHTML = "开始搜索并下载文献";
-    
+
     btn.onclick = function() {
         downloadPapers();
     };
-    btnparent.append(btn);
+    //btnparent.append(btn);
+    let body = document.querySelector('body'); // 获取 body 元素
+    body.insertBefore(btn, body.firstChild); // 在 body 的第一个子节点之前插入按钮
 })();
