@@ -9,6 +9,7 @@
 2. 修改var keyword为你的关键词
 3. 修改links，query到paper title的节点
 4. 修改btnparent，设置按钮放置位置
+5.<b>确保浏览器设置点击PDF自动下载，设置下载位置以修改正确，设置允许paperlist网页批量下载文件</b>
 
 # 注意事项
 1. 确保浏览器设置点击PDF自动下载，设置下载位置以修改正确，设置允许paperlist网页批量下载文件
